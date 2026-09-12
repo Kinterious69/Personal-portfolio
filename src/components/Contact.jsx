@@ -13,11 +13,13 @@ const Contact = (props) => {
     })
     const [isMessageSent, setIsMessageSent]=useState(false)
     const [loading, setIsLoading]=useState(false)
-    
+         const  brevoApi=import.meta.env.VITE_BREVO_API_KEY
+         
 
     const brevo = new BrevoClient({ 
-        apiKey:import.meta.env.BREVO_API_KEY
+        apiKey:brevoApi
     });
+    
     
    
 
