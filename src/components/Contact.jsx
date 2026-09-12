@@ -105,11 +105,12 @@ const Contact = (props) => {
             </form>
           
 
+       
         </div>
 
-          <div className='grid justify-center  '>
+          <div className='grid justify-center mb-8  '>
             <h1 className='text-3xl font-comic text-center font-bold py-8'> <span className='text-blue-400'>Or Lets Connect</span> through my socials</h1>
-             <div className='flex justify-center items-center  md:grid md:grid-cols-4 gap-4 font-patrick text-lg'>
+             <div className='flex justify-center items-center  md:grid md:grid-cols-4 gap-4 font-signika text-lg'>
                 <div className='flex flex-col justify-center items-center'> <img src={images.mailIcon} alt=" " className='  h-12 w-12 md md:w-24 md:h-24 hover:scale-105 transition duration-200' />
                    <h1>Email</h1>
                 </div>
@@ -128,7 +129,7 @@ const Contact = (props) => {
                   </div>
              </div>
           </div>
-          <h1 className='text-lg  text-center text-gray-400  absolute bottom-2 left-9  mt-8 pt-8 md:static'>Sulaymankinteh @2026  All rights reserved </h1>
+          <h1 className='text-lg  text-center text-gray-400  absolute bottom-2 left-9  mt-18 pt-8 md:static'>Sulaymankinteh @2026  All rights reserved </h1>
           
       
       

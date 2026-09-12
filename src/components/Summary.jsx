@@ -1,6 +1,8 @@
 import React from 'react'
 import Type from 'typewriter-effect'
 import images from '../assets/Icons'
+import { Link } from 'react-router'
+
 
 
 const Summary = () => {
@@ -32,8 +34,8 @@ const Summary = () => {
         <p className='text-justify font-patrick text-2xl pb-3'>A BSc Computer Science student and an aspiring software developer fascinated by backend development and Al/Machine Learning. I transform ideas into elegant, user-friendly digital experiences.</p>
         <div className='flex flex-col md:flex-row gap-4 font-signika '>
           <button className='px-4 py-2 font-medium bg-blue-400  rounded-full hover:scale-105 transition duration-300  '>View My Work</button>
+         
           <button className='px-6 py-2  font-medium bg-blue-400 rounded-full hover:scale-105 transition duration-300'>Contact Me</button>
-
         </div>
    </div> 
    <div className=' p-2  w-96  m-auto  '>
