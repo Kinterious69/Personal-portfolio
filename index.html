@@ -28,20 +28,23 @@
 
   <div id="root"></div>
 
-  <style>
-    #loading-screen {
-      position: fixed; inset: 0; background: #ffffff;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      font-family: system-ui, sans-serif; z-index: 9999;
-      transition: opacity 0.4s ease;
-    }
-    .spinner {
-      border: 3px solid #f3f3f3; width: 40px; height: 40px;
-      border-radius: 50%; border-top: 3px solid #3498db;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-  </style>
+<style>
+  #loading-screen {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff; /* 💡 REQUIRED: Forces it to cover everything */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 99999; /* 💡 REQUIRED: Forces it on top of React layout */
+    transition: opacity 0.4s ease;
+  }
+</style>
+
   </body>
 
     <div id="root"></div>

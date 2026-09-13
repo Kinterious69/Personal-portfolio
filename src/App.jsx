@@ -17,31 +17,26 @@ const App = () => {
   const [showApp, setShowApp] = useState(false);
 
   useEffect(() => {
-    const handlePageLoad = () => {
+    // 💡 Introduce a tiny delay so the browser has time to render the spinner
+    const timer = setTimeout(() => {
       const loader = document.getElementById('loading-screen');
       if (loader) {
-        loader.style.opacity = '0'; 
+        loader.style.opacity = '0'; // Triggers smooth CSS fade out
         setTimeout(() => {
-          loader.remove(); 
-          setShowApp(true); 
-        }, 400);
+          loader.remove(); // Removes it from the DOM
+          setShowApp(true); // Loads your text and layouts safely
+        }, 400); // Matches the CSS transition time
       } else {
         setShowApp(true);
       }
-    };
+    }, 300); // 300ms guarantee window for spinner display
 
-    
-    if (document.readyState === 'complete') {
-      handlePageLoad();
-    } else {
-     
-      window.addEventListener('load', handlePageLoad);
-      return () => window.removeEventListener('load', handlePageLoad);
-    }
+    return () => clearTimeout(timer);
   }, []);
 
-  
   if (!showApp) return null;
+
+ 
 
  
 
