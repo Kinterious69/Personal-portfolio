@@ -58,7 +58,7 @@ const Projects = (props) => {
                         <h2 className='text-justify'>{project.describtion}</h2> 
                        
                        
-                         <img src={project.image} alt="student-management" />
+                         <img src={project.image} alt="student-management" loading='lazy'/>
                          <div className='flex flex-wrap gap-1.5 items-center justify-center text-white pt-3 font-patrick '>
                             
                            {

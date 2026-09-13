@@ -91,15 +91,15 @@ const Contact = (props) => {
                 </div>
                 <div className={` flex gap-2 items-center justify-center rounded-full p-4 border-2 ${props.isDarkMode ?"border-slate-800 ":""}`}> 
                    <div><Mail/></div>
-                  <input value={formData.email} onChange={handleChange} type="email" name='email' placeholder='enter your email' className={`w-full bg-transparent border-none ${props.isDarkMode?"":"placeholder:text-slate-700"} text-lg  focus:outline-none` } />
+                  <input value={formData.email} onChange={handleChange} type='email' name='email' placeholder='enter your email' className={`w-full bg-transparent border-none ${props.isDarkMode?"":"placeholder:text-slate-700"} text-lg  focus:outline-none` }  />
                 </div>
                
                 <textarea value={formData.message} onChange={handleChange} name="message" id="" placeholder='enter message' rows="5" className={`rounded-md  bg-transparent border-2 ${props.isDarkMode ?"border-slate-800 ":"placeholder:text-slate-700"} text-xl p-2 focus:outline-none "}`}></textarea>
-                  {!isMessageSent ?   <button disabled={loading}  className={` w-full rounded-full  border-2 ${props.isDarkMode ?"border-slate-800":""}  p-4 bg-blue-400 text-xl font-signika
+                  {!isMessageSent ?   <button disabled={loading} type='submit'  className={` w-full rounded-full  border-2 ${props.isDarkMode ?"border-slate-800":""}  p-4 bg-blue-400 text-xl font-signika
                    flex justify-center items-center gap-2   `}>
                               send message
                                <Send/>
-                           </button> :   <button  className={` w-full rounded-full  border-2 ${props.isDarkMode ?"border-slate-800":""}  p-4 bg-green-600 text-xl  font-signika flex justify-center items-center gap-2   `}>
+                           </button> :   <button   className={` w-full rounded-full  border-2 ${props.isDarkMode ?"border-slate-800":""}  p-4 bg-green-600 text-xl  font-signika flex justify-center items-center gap-2   `}>
                                message successfully sent
                                <Check  />
                            </button> }
@@ -113,20 +113,21 @@ const Contact = (props) => {
           <div className='grid justify-center mb-8  '>
             <h1 className='text-3xl font-comic text-center font-bold py-8'> <span className='text-blue-400'>Or Lets Connect</span> through my socials</h1>
              <div className='flex justify-center items-center  md:grid md:grid-cols-4 gap-4 font-signika text-lg'>
-                <div className='flex flex-col justify-center items-center'> <img src={images.mailIcon} alt=" " className='  h-12 w-12 md md:w-24 md:h-24 hover:scale-105 transition duration-200' />
+                <div className='flex flex-col justify-center items-center'>
+                   <img src={images.mailIcon} alt=" " className='  h-12 w-12 md md:w-24 md:h-24 hover:scale-105 transition duration-200' loading='lazy' />
                    <h1>Email</h1>
                 </div>
                 <div  className='flex flex-col justify-center items-center'>
-                 <img src={images.linkedInIcon} alt="" className='h-12 w-12 md md:w-24 md:h-24 hover:scale-105 transition duration-200' />
+                 <img src={images.linkedInIcon} alt="" className='h-12 w-12 md md:w-24 md:h-24 hover:scale-105 transition duration-200' loading='lazy' />
                     <h1>LinkedIn</h1>
                 </div>
                <div  className='flex flex-col justify-center items-center'>
-              <img src={images.facebookIcon} alt="" className='h-12 w-12 md:w-24 md:h-24 hover:scale-105 transition duration-200 bg-white rounded-md' />
+              <img src={images.facebookIcon} alt="" className='h-12 w-12 md:w-24 md:h-24 hover:scale-105 transition duration-200 bg-white rounded-md' loading='lazy'/>
                  <h1>Facebook</h1>
                </div>
                  
                   <div  className='flex flex-col justify-center items-center'>
-                     <img src={images.gitHub1} alt="" className='h-12 w-12 md md:w-24 md:h-24 hover:scale-105 transition duration-200 ' />
+                     <img src={images.gitHub1} alt="" className='h-12 w-12 md md:w-24 md:h-24 hover:scale-105 transition duration-200 ' loading='lazy'/>
                      <h1> GitHub</h1>
                   </div>
              </div>
