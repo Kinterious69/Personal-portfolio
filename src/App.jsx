@@ -45,7 +45,7 @@ const App = () => {
 
   return (
 
-    <div  className={`${isDarkMode ? "bg-slate-900 text-white" : "bg-white text-black"}`} >
+    <div  className={`${isDarkMode ? "bg-slate-900  text-white" : "bg-white text-black"}`} >
    <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
 
     <SchrollEffect>    <Summary/>  </SchrollEffect>  

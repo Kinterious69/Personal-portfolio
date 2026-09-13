@@ -1,7 +1,8 @@
 import { Mail,User,Send, Check} from 'lucide-react'
 import { BrevoClient } from '@getbrevo/brevo';
-import React, { useState } from 'react'
+import React, { useState,useEffect} from 'react'
 import images from '../assets/Icons';
+import { Link } from 'react-router';
 
 
 
@@ -13,6 +14,7 @@ const Contact = (props) => {
     })
     const [isMessageSent, setIsMessageSent]=useState(false)
     const [loading, setIsLoading]=useState(false)
+     const [isMobile, setIsMobile] = useState(false);
          const  brevoApi=import.meta.env.VITE_BREVO_API_KEY
          
 
@@ -20,7 +22,29 @@ const Contact = (props) => {
         apiKey:brevoApi
     });
     
+
+  useEffect(() => {
+    setIsMobile(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent));
+  }, []);
+
+  const myEmail = "sulaymankinteh918@gmail.com"; // 👈 Put your email here
+  const emailSubject = encodeURIComponent("Project Inquiry | Portfolio");
+  const emailBody = encodeURIComponent("Hi there,\n\nI saw your portfolio...");
+    const handleClick = (e) => {
+    e.preventDefault(); 
     
+    // Form the strings properly using backticks `
+    const desktopUrl = `https://google.com{myEmail}&su=${emailSubject}&body=${emailBody}`;
+    const mobileUrl = `mailto:${myEmail}?subject=${emailSubject}&body=${emailBody}`;
+    
+    if (isMobile) {
+      window.location.href = mobileUrl;
+    } else {
+      // 🟢 This will now execute perfectly without crashing
+      window.open(desktopUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
    
 
     const handleSubmit=async (e)=>{
@@ -113,23 +137,40 @@ const Contact = (props) => {
           <div className='grid justify-center mb-8  '>
             <h1 className='text-3xl font-comic text-center font-bold py-8'> <span className='text-blue-400'>Or Lets Connect</span> through my socials</h1>
              <div className='flex justify-center items-center  md:grid md:grid-cols-4 gap-4 font-signika text-lg'>
-                <div className='flex flex-col justify-center items-center'>
-                   <img src={images.mailIcon} alt=" " className='  h-12 w-12 md md:w-24 md:h-24 hover:scale-105 transition duration-200' loading='lazy' />
-                   <h1>Email</h1>
-                </div>
+                <button 
+      onClick={handleClick}
+      className="cursor-pointer group focus:outline-none"
+         >
+        <div className="flex flex-col justify-center items-center">
+        <img 
+          src={images.mailIcon} 
+          alt="Email contact" 
+          className="h-12 w-12 md:w-24 md:h-24 hover:scale-105 transition duration-200" 
+          loading="lazy" 
+        />
+        <h1>Email</h1>
+           </div>
+           </button>
+
+                <Link to="https://www.linkedin.com/in/sulayman-k-a8089a284" target='_blank'>
                 <div  className='flex flex-col justify-center items-center'>
                  <img src={images.linkedInIcon} alt="" className='h-12 w-12 md md:w-24 md:h-24 hover:scale-105 transition duration-200' loading='lazy' />
                     <h1>LinkedIn</h1>
                 </div>
+                </Link>
+                <Link to="https://www.facebook.com/share/1UCCXhx7fh/?mibextid=wwXIfr" target='_blank'>
                <div  className='flex flex-col justify-center items-center'>
               <img src={images.facebookIcon} alt="" className='h-12 w-12 md:w-24 md:h-24 hover:scale-105 transition duration-200 bg-white rounded-md' loading='lazy'/>
                  <h1>Facebook</h1>
                </div>
+               </Link>
+               <Link to="https://github.com/Kinterious69" target='_blank'>
                  
                   <div  className='flex flex-col justify-center items-center'>
                      <img src={images.gitHub1} alt="" className='h-12 w-12 md md:w-24 md:h-24 hover:scale-105 transition duration-200 ' loading='lazy'/>
                      <h1> GitHub</h1>
                   </div>
+                  </Link>
              </div>
           </div>
           <h1 className='text-lg  text-center text-gray-400  absolute bottom-2 left-9  mt-18 pt-8 md:static'>Sulaymankinteh @2026  All rights reserved </h1>
