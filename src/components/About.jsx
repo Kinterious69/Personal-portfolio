@@ -44,7 +44,7 @@ const About = (props) => {
                   
             <div className='w-full md:w-1/2  px-6 py-8 text-lg '>
              <h1 className='font-bold text-3xl text-center  mb-5'><span className='text-blue-400'>Transitioning </span>Imaginations Into The Real World </h1>
-               <p className='text-justify font-patrick text-2xl'>my name is <strong>sulayman kinteh</strong> and am an aspiring backend developer with skills in backend technology such as node.js express.js databases
+               <p className='text-justify hyphens-auto   md:text-justify font-patrick text-2xl'>my name is <strong>sulayman kinteh</strong> and am an aspiring backend developer with skills in backend technology such as node.js express.js databases
                  mongoDB, posgreSQL, MySQL, and tools such as Git and Github.I also have a passion for Artificial Intelligence and areas in Artificial Intellligence such as Machine Learning, Deep Learning and Natural Language Processing.Am also skilled in Artificial Intelligence and Machine Learning tools and  technologies such as Pytorch, Numpy, Pandas, Tensorflow,Hugging Face, and Google Colab. Am consistently improving and bulding more projects with an aim to solve real world problems and to further strenghten my skills 
                </p>
                <div className='flex flex-col md:flex-row pt-8'>
