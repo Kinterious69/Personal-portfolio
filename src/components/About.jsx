@@ -48,8 +48,8 @@ const About = (props) => {
                  mongoDB, posgreSQL, MySQL, and tools such as Git and Github.I also have a passion for Artificial Intelligence and areas in Artificial Intellligence such as Machine Learning, Deep Learning and Natural Language Processing.Am also skilled in Artificial Intelligence and Machine Learning tools and  technologies such as Pytorch, Numpy, Pandas, Tensorflow,Hugging Face, and Google Colab. Am consistently improving and bulding more projects with an aim to solve real world problems and to further strenghten my skills 
                </p>
                <div className='flex flex-col md:flex-row pt-8'>
-            <button className=' px-8 py-2 font-signika font-medium mt-4 md:ml-[4vw] md:w- rounded-full bg-blue-400 hover:scale-105 transition duration-300 flex gap-2 justify-center  items-center'>lets connect
-               <MessageCircle/></button>
+            <a href='#contact'  className=' px-8 py-2 font-signika font-medium mt-4 md:ml-[4vw] md:w- rounded-full bg-blue-400 hover:scale-105 transition duration-300 flex gap-2 justify-center  items-center'>lets connect
+               <MessageCircle/></a>
             </div>
             </div>
 

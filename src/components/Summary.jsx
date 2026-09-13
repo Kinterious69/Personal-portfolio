@@ -2,6 +2,9 @@ import React from 'react'
 import Type from 'typewriter-effect'
 import images from '../assets/Icons'
 import { ArrowBigRight, Mail,  } from 'lucide-react'
+import { Link } from 'react-router'
+import Contact from './Contact'
+import Projects from './Projects'
 
 
 
@@ -33,14 +36,17 @@ const Summary = () => {
       
          
         <p className='text-justify hyphens-auto   font-patrick text-2xl pb-3'>A BSc Computer Science student and aspiring backend engineer fascinated by robust system architectures and AI/Machine Learning. I transform complex logical concepts into scalable, highly-performant backend ecosystems and intelligent data pipelines.</p>
-        <div className='flex flex-col md:flex-row gap-4 font-signika '>
-          <button className='px-6 py-2 font-medium bg-blue-400  rounded-full hover:scale-105 transition duration-300 flex gap-2 justify-center  items-center'>
+        <div className='flex flex-col md:flex-row gap-4 font-signika  '>
+           <a  href='#projects'  className='px-6 py-2 font-medium bg-blue-400  rounded-full hover:scale-105 transition duration-300 flex gap-2 justify-center  items-center'>
                View My Work 
              <ArrowBigRight/>
-             </button>
+             </a>
+             
          
-          <button className='px-8 py-2  font-medium bg-blue-400 rounded-full hover:scale-105 transition duration-300 flex gap-2  justify-center  items-center '>Contact Me 
-            <Mail/></button>
+         
+            <a href='#contact' className='px-8 py-2  font-medium bg-blue-400 rounded-full hover:scale-105 transition duration-300 flex gap-2  justify-center  items-center '>Contact Me 
+            <Mail/></a>
+          
         </div>
    </div> 
    <div className=' p-2  md:w-96   m-auto  '>
