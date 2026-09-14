@@ -1,15 +1,13 @@
 import React from 'react'
 import Type from 'typewriter-effect'
 import images from '../assets/Icons'
-import { ArrowBigRight, Mail,  } from 'lucide-react'
-import { Link } from 'react-router'
-import Contact from './Contact'
-import Projects from './Projects'
+import { ArrowRight, Mail,  } from 'lucide-react'
 
 
 
 
-const Summary = () => {
+
+const Summary = (props) => {
   return (
     
     <div className=' w-full min-h-screen bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]    mb-12    'id='summary'>
@@ -37,9 +35,9 @@ const Summary = () => {
          
         <p className='text-justify hyphens-auto   font-patrick text-2xl pb-3'>A BSc Computer Science student and aspiring backend engineer fascinated by robust system architectures and AI/Machine Learning. I transform complex logical concepts into scalable, highly-performant backend ecosystems and intelligent data pipelines.</p>
         <div className='flex flex-col md:flex-row gap-4 font-signika  '>
-           <a  href='#projects'  className='px-6 py-2 font-medium bg-blue-400  rounded-full hover:scale-105 transition duration-300 flex gap-2 justify-center  items-center'>
+           <a  href='#projects'  className={`px-6 py-2 border-2 ${props.isDarkMode?"border-slate-800":""}  font-medium  shadow-lg  rounded-full hover:scale-105 transition duration-300 flex gap-2 justify-center  items-center`}>
                View My Work 
-             <ArrowBigRight/>
+             <ArrowRight/>
              </a>
              
          
@@ -50,7 +48,7 @@ const Summary = () => {
         </div>
    </div> 
    <div className=' p-2  md:w-96   m-auto  '>
-    <img src={images.myPhotoIcon1}alt="" className='rounded-full  w-80 h-80 md:w-96 md:h-96' loading='lazy' />
+    <img src={images.myPhotoIcon1}alt="" className='rounded-full  w-80 h-80 md:w-96 md:h-96 ' loading='lazy' />
    </div>
 
 </section>
