@@ -126,14 +126,14 @@ const Contact = (props) => {
                 </div>
                
                 <textarea value={formData.message} onChange={handleChange} name="message" id="" placeholder='enter message' rows="5" className={`rounded-md  bg-transparent border-2 ${props.isDarkMode ?"border-slate-800 ":"placeholder:text-slate-700"} text-xl p-2 focus:outline-none "}` }></textarea>
-                  {!isMessageSent ?   <button disabled={loading} type='submit'  className={` w-full rounded-full cursor-pointer  border-2 ${props.isDarkMode ?"border-slate-800":""}  p-4 bg-blue-400 text-xl font-signika
+                  {!isMessageSent ?   <button type='submit' disabled={loading}   className={` w-full rounded-full cursor-pointer  border-2 ${props.isDarkMode ?"border-slate-800":""}  p-4 bg-blue-400 text-xl font-signika
                    flex justify-center items-center gap-2   `}>
                               send message
                                <Send/>
-                           </button> :   <button   className={` w-full rounded-full  border-2 ${props.isDarkMode ?"border-slate-800":""}  p-4 bg-green-600 text-xl  font-signika flex justify-center items-center gap-2   `}>
+                           </button> :   <p disabled   className={` w-full rounded-full  border-2 ${props.isDarkMode ?"border-slate-800":""}  p-4 bg-green-600 text-xl  font-signika flex justify-center items-center gap-2   `}>
                                message successfully sent
                                <Check  />
-                           </button> }
+                           </p> }
                            
                    
             </form>
