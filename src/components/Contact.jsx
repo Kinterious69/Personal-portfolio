@@ -128,7 +128,7 @@ const Contact = (props) => {
          
 
           <div  className={`p-4 flex ${props.isDarkMode ?"border-slate-800 ":""} border-2 shadow-lg rounded-md  md:w-1/2 md:m-auto  `}>
-            <form onClick={handleSubmit}    className='flex flex-col gap-3 w-full p-2 '>
+            <form onSubmit={handleSubmit}    className='flex flex-col gap-3 w-full p-2 '>
                 <div className={` flex gap-2 items-center justify-center rounded-full ${props.isDarkMode ?"border-slate-800 ":""} p-4 border-2`}> 
                    <div><User/></div>
                   <input value={formData.name} onChange={handleChange} type="text" name='name' placeholder='enter your name' className={`w-full bg-transparent border-none text-lg focus:outline-none ${props.isDarkMode?"":"placeholder:text-slate-700"} `} />
