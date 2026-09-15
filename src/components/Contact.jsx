@@ -15,6 +15,7 @@ const Contact = (props) => {
     const [isMessageSent, setIsMessageSent]=useState(false)
     const [loading, setIsLoading]=useState(false)
      const [isMobile, setIsMobile] = useState(false);
+  
          const  brevoApi=import.meta.env.VITE_BREVO_API_KEY
          
 
@@ -53,23 +54,9 @@ const Contact = (props) => {
          
           try {
             setIsLoading(true)
-             const p =document.getElementById("p")
-             if(formData.email==="" || !formData.email.includes("@")){
-                     setTimeout(()=>{
-                    p.textContent="Enter a valid email"
-
-                   },300)
-                   return false
-                 
-                   
-                 }else{
-                  p.textContent=""
-                 }
-                
-
-  
-                
-               
+             
+            
+             
              
 
             const result = await brevo.transactionalEmails.sendTransacEmail({
@@ -110,10 +97,10 @@ const Contact = (props) => {
             ...prevData,
             [name]:value
         }))
+        
 
-
-    }
-
+        }
+       
     
 
 
@@ -128,18 +115,18 @@ const Contact = (props) => {
          
 
           <div  className={`p-4 flex ${props.isDarkMode ?"border-slate-800 ":""} border-2 shadow-lg rounded-md  md:w-1/2 md:m-auto  `}>
-            <form onSubmit={handleSubmit}    className='flex flex-col gap-3 w-full p-2 '>
+            <form onSubmit={handleSubmit}   className='flex flex-col gap-3 w-full p-2 '>
                 <div className={` flex gap-2 items-center justify-center rounded-full ${props.isDarkMode ?"border-slate-800 ":""} p-4 border-2`}> 
                    <div><User/></div>
                   <input value={formData.name} onChange={handleChange} type="text" name='name' placeholder='enter your name' className={`w-full bg-transparent border-none text-lg focus:outline-none ${props.isDarkMode?"":"placeholder:text-slate-700"} `} />
                 </div>
                 <div className={` flex gap-2 items-center justify-center rounded-full p-4 border-2 ${props.isDarkMode ?"border-slate-800 ":""}`}> 
                    <div><Mail/></div>
-                  <input value={formData.email} onChange={handleChange} type='email' name='email' placeholder='enter your email' className={`w-full bg-transparent border-none ${props.isDarkMode?"":"placeholder:text-slate-700"} text-lg  focus:outline-none` }  />
+                  <input value={formData.email} onChange={handleChange}  type='email' name='email' placeholder='enter your email' className={`w-full bg-transparent border-none ${props.isDarkMode?"":"placeholder:text-slate-700"} text-lg  focus:outline-none` }  />
                 </div>
                
                 <textarea value={formData.message} onChange={handleChange} name="message" id="" placeholder='enter message' rows="5" className={`rounded-md  bg-transparent border-2 ${props.isDarkMode ?"border-slate-800 ":"placeholder:text-slate-700"} text-xl p-2 focus:outline-none "}`}></textarea>
-                  {!isMessageSent ?   <button disabled={loading} type='submit'  className={` w-full rounded-full  border-2 ${props.isDarkMode ?"border-slate-800":""}  p-4 bg-blue-400 text-xl font-signika
+                  {!isMessageSent ?   <button disabled={loading} type='submit'  className={` w-full rounded-full cursor-pointer  border-2 ${props.isDarkMode ?"border-slate-800":""}  p-4 bg-blue-400 text-xl font-signika
                    flex justify-center items-center gap-2   `}>
                               send message
                                <Send/>
@@ -147,7 +134,7 @@ const Contact = (props) => {
                                message successfully sent
                                <Check  />
                            </button> }
-                           <p id='p' className='text-red-500'></p>
+                           
                    
             </form>
           
