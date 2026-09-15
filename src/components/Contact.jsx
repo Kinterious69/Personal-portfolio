@@ -44,6 +44,7 @@ const Contact = (props) => {
       window.open(desktopUrl, '_blank', 'noopener,noreferrer');
     }
   };
+   
 
    
 
@@ -52,6 +53,25 @@ const Contact = (props) => {
          
           try {
             setIsLoading(true)
+             const p =document.getElementById("p")
+             if(formData.email==="" || !formData.email.includes("@")){
+                     setTimeout(()=>{
+                    p.textContent="Enter a valid email"
+
+                   },300)
+                   return false
+                 
+                   
+                 }else{
+                  p.textContent=""
+                 }
+                
+
+  
+                
+               
+             
+
             const result = await brevo.transactionalEmails.sendTransacEmail({
               subject: `Message from my Portfolio website from ${formData.email}`,
               htmlContent: formData.message ,
@@ -127,6 +147,7 @@ const Contact = (props) => {
                                message successfully sent
                                <Check  />
                            </button> }
+                           <p id='p' className='text-red-500'></p>
                    
             </form>
           

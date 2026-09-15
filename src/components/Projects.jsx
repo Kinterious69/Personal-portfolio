@@ -44,7 +44,7 @@ const Projects = (props) => {
           
         <h1 className='font-bold text-3xl text-center font-comic mb-5'>Projects</h1>
       
-        <div className='grid grid-cols-1 md:grid-cols-3  gap-8          ' >
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8          ' >
             {
                 projects.map((project,key)=>(
                   <div  key={key} className={`grid  gap-2 border-2   p-4 ${props.isDarkMode?"border-slate-800": "border-2"} relative md:w-96  shadow-lg  rounded-md   `} > 

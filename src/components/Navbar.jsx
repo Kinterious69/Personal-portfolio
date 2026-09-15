@@ -37,7 +37,7 @@ const Navbar = (props) => {
                 <a
 
                   href={`#${item.toLowerCase()}`}
-                  className="text-lg font-semibold transition hover:text-blue-400"
+                  className="text-lg font-semibold font-comic transition hover:text-blue-400"
                   onClick={()=>setMenuStyle(item.toLowerCase())}
                 >
                   {item}
