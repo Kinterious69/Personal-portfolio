@@ -118,14 +118,14 @@ const Contact = (props) => {
             <form onSubmit={handleSubmit}   className='flex flex-col gap-3 w-full p-2 '>
                 <div className={` flex gap-2 items-center justify-center rounded-full ${props.isDarkMode ?"border-slate-800 ":""} p-4 border-2`}> 
                    <div><User/></div>
-                  <input value={formData.name} onChange={handleChange} type="text" name='name' placeholder='enter your name' className={`w-full bg-transparent border-none text-lg focus:outline-none ${props.isDarkMode?"":"placeholder:text-slate-700"} `} />
+                  <input value={formData.name} onChange={handleChange} type="text" name='name' placeholder='enter your name' className={`w-full bg-transparent border-none text-lg focus:outline-none ${props.isDarkMode?"":"placeholder:text-slate-700"} `} required />
                 </div>
                 <div className={` flex gap-2 items-center justify-center rounded-full p-4 border-2 ${props.isDarkMode ?"border-slate-800 ":""}`}> 
                    <div><Mail/></div>
-                  <input value={formData.email} onChange={handleChange}  type='email' name='email' placeholder='enter your email' className={`w-full bg-transparent border-none ${props.isDarkMode?"":"placeholder:text-slate-700"} text-lg  focus:outline-none` }  />
+                  <input value={formData.email} onChange={handleChange}  type='email' name='email' placeholder='enter your email' className={`w-full bg-transparent border-none ${props.isDarkMode?"":"placeholder:text-slate-700"} text-lg  focus:outline-none` } required />
                 </div>
                
-                <textarea value={formData.message} onChange={handleChange} name="message" id="" placeholder='enter message' rows="5" className={`rounded-md  bg-transparent border-2 ${props.isDarkMode ?"border-slate-800 ":"placeholder:text-slate-700"} text-xl p-2 focus:outline-none "}`}></textarea>
+                <textarea value={formData.message} onChange={handleChange} name="message" id="" placeholder='enter message' rows="5" className={`rounded-md  bg-transparent border-2 ${props.isDarkMode ?"border-slate-800 ":"placeholder:text-slate-700"} text-xl p-2 focus:outline-none "}` }></textarea>
                   {!isMessageSent ?   <button disabled={loading} type='submit'  className={` w-full rounded-full cursor-pointer  border-2 ${props.isDarkMode ?"border-slate-800":""}  p-4 bg-blue-400 text-xl font-signika
                    flex justify-center items-center gap-2   `}>
                               send message

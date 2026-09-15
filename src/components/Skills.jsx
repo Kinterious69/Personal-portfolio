@@ -167,7 +167,7 @@ const Skills = (props) => {
         {  
             
             filteredCategory.map((skill,key)=>(
-                 <div  key={key} className={` flex  flex-col  gap-2 border-2 shadow-lg ${props.isDarkMode ? "border-slate-800" : "border-2"}  rounded-md p-2  w-full items-center  md:ml-[6vw] hover:scale-105 transition duration-300   md:w-64 md:p-2 md:gap-2 `}>
+                 <div  key={key} className={` flex  flex-col  gap-2 border-2 shadow-lg ${props.isDarkMode ? "border-slate-800 " : "border-2"}  rounded-md p-2  w-full items-center  md:ml-[6vw] hover:scale-105 transition duration-300   md:w-64 md:p-2 md:gap-2 `}>
                      <div className=''><img src={skill.img} alt="" className='h=12 w-12  ' loading='lazy' /></div>  
                   <div className='bg-green'><h1 className=' text-xl font-signika  '>{skill.name}</h1></div>  
                  
